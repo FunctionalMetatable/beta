@@ -9,7 +9,7 @@ body {
    font-family: 'Roboto', sans-serif;
 }
 
-.jumbotron-text-center {
+.jumbotron-text-center * {
    float: center;
 }
 
