@@ -48,7 +48,7 @@
     </li>
     <li>
       <div class="align-right">
-        <a id="ocular" title="This is an ocular status. You can change yours at my-ocular.jeffalo.net."> </a>
+        <a id="ocular" title="This is an ocular status. You can set yours at my-ocular.jeffalo.net."> </a>
         <script>
           var node = document.getElementById("ocular")
           async function updateOcular() {
@@ -56,7 +56,7 @@
             var json = await pull.json();
             node.innerText = json.status || ""
             node.style = "color:" + json.color
-            setTimeout(updateOcular, 10000)
+            setTimeout(updateOcular, 1000)
           }
           updateOcular()
         </script>
