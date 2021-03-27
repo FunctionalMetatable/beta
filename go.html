@@ -12,7 +12,7 @@
         ifr.src = "/404";
         ifr.width = "100%";
         ifr.height = "100%";
-        document.body.appendCHild(ifr)
+        document.body.appendCHild(ifr);
       }
       fetch("https://functionalmetatable.github.io/assets/redir.json")
         .catch((e) => {
@@ -23,7 +23,7 @@
           if (data[code]) {
             window.location.href = data[code];
           } else {
-            goTo404()
+            goTo404();
           }
         });
     </script>
