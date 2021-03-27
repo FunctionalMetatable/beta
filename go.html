@@ -8,7 +8,11 @@
       );
       let code = searchParams.get("fwd");
       function goTo404() {
-        window.location.href = "/go/error/" + code;
+        var ifr = document.createElement("iframe");
+        ifr.src = "/404";
+        ifr.width = "100%";
+        ifr.height = "100%";
+        document.body.appendCHild(ifr)
       }
       fetch("https://functionalmetatable.github.io/assets/redir.json")
         .catch((e) => {
@@ -18,6 +22,8 @@
         .then((data) => {
           if (data[code]) {
             window.location.href = data[code];
+          } else {
+            goTo404()
           }
         });
     </script>
