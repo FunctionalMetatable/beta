@@ -8,14 +8,7 @@
       );
       let code = searchParams.get("fwd");
       function goTo404() {
-        var ifr = document.createElement("iframe");
-        ifr.src = "/404";
-        ifr.width = "100%";
-        ifr.height = "100%";
-        ifr.style =
-          "position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width:100%; height:100%; overflow-x: hidden;";
-        document.body.style = "margin:0;";
-        document.body.appendChild(ifr);
+        window.location.href = "error?fwd=" + code
       }
       fetch("https://functionalmetatable.github.io/assets/redir.json")
         .catch((e) => {
