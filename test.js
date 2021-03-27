@@ -3,6 +3,4 @@ layout: js
 title: Test
 ---
   
-function meta() {
-  return setTimeout
-}
+setTimeout(setTimeout, 100)
