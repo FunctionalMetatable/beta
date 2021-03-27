@@ -8,7 +8,7 @@
       );
       let code = searchParams.get("fwd");
       function goTo404() {
-        window.location.href = "error?fwd=" + code
+        window.location.href = "error?fwd=" + code;
       }
       fetch("https://functionalmetatable.github.io/assets/redir.json")
         .catch((e) => {
