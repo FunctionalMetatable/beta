@@ -2,16 +2,16 @@
 <html>
   <head>
     <title>Fullscreen YouTube Player</title>
+    <meta name="description" content="Fullscreen YouTube player. Credits go to YouTube and StackOverflow.">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body style="overflow: hidden; margin: 0">
     <script type="text/javascript">
-      function add(ytUrl) {
-        document.body.innerHTML =
+      function load(ytUrl) {
+        document.body.innerHTML +=
           '<iframe id="video" src="//www.youtube.com/embed/' +
           ytUrl +
-          '?autoplay=1" frameborder="0" allowfullscreen></iframe>' +
-          document.body.innerHTML;
+          '?autoplay=1" frameborder="0" allowfullscreen></iframe>'
         $(function () {
           $("#video").css({
             width: $(window).innerWidth() + "px",
@@ -23,12 +23,17 @@
               height: $(window).innerHeight() + "px",
             });
           });
-        }); // did you know i found this line of code in a stack overflow thing?
+        }); // did you know i found this function in a stack overflow thing?
       }
       const url = new URL(window.location.href);
       var afterq = url.search.substring(1);
-      add(afterq);
-      console.log(afterq);
+      var URLSP = new URLSearchParams(afterq)
+      
+      if (URLSP.get("v")) {
+        load(URLSP.get("v"))
+      } else {
+        window.location.href = "/error"
+      }
     </script>
   </body>
 </html>
