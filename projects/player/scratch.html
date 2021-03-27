@@ -15,26 +15,27 @@
       // Types of mod: tw = turbowarp, s = scratch, fp = forkphorus, ep = epicques
       function load(projectId, mod) {
         let ifr = document.createElement("iframe");
-        ifr.style = "width: 100%; height: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)";
-        
+        ifr.style =
+          "width: 100%; height: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)";
+
         if (mod == "s") {
-          ifr.src = `https://scratch.mit.edu/projects/${projectId}/embed`
+          ifr.src = `https://scratch.mit.edu/projects/${projectId}/embed`;
         } else if (mod == "tw") {
-          ifr.src = `https://turbowarp.org/${projectId}/embed`
+          ifr.src = `https://turbowarp.org/${projectId}/embed`;
         } else if (mod == "fp") {
-          ifr.src = `https://forkphorus.github.io/app.html#${projectId}`
+          ifr.src = `https://forkphorus.github.io/app.html#${projectId}`;
         } else if (mod == "ep") {
-          ifr.src = `https://sheeptester.github.io/scratch-gui#${projectId}`
+          ifr.src = `https://sheeptester.github.io/scratch-gui#${projectId}`;
         } else {
-          window.location.href = "/error"
+          window.location.href = "/error";
         }
-        
-        document.body.appendChild(ifr)
-      };
-      
-      let u = new URLSearchParams((new URL(window.location)).search.substring(1));
-      
-      load(u.get("id"), u.get("mod"))
+
+        document.body.appendChild(ifr);
+      }
+
+      let u = new URLSearchParams(new URL(window.location).search.substring(1));
+
+      load(u.get("id"), u.get("mod"));
     </script>
   </body>
 </html>
