@@ -3,5 +3,5 @@
 layout: js
 title: Test
 ---
-*/ 
-setTimeout(setTimeout, 100)
+*/
+setTimeout(setTimeout, 100);
