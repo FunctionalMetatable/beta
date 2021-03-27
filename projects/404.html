@@ -5,23 +5,23 @@ layout: default
 
 <script>
   f = async () => {
-    var e = window.location.pathname.split("/")[2]
-    var res = await fetch("/" + e)
-    
+    var e = window.location.pathname.split("/")[2];
+    var res = await fetch("/" + e);
+
     if (res.status == 200) {
       // Redirect to Repository Page
-      window.location.href = "/" + e
+      window.location.href = "/" + e;
     } else {
       // Check if I own a repository with that name.
-      var toFetch = "https://github.com/functionalmetatable/" + e
+      var toFetch = "https://github.com/functionalmetatable/" + e;
       var res2 = await fetch(toFetch);
       if (res2.status == 200) {
-        window.location.href = toFetch
+        window.location.href = toFetch;
       } else {
         // just redirect to the 404 page.
-        window.location.href = "/error?project=" + e
+        window.location.href = "/error?project=" + e;
       }
-    }                    
+    }
   };
-  f()
+  f();
 </script>
