@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<title>Fullscreen YouTube Player</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body style="overflow:hidden; margin:0;">
+  <script type="text/javascript">
+    function add(ytUrl) {
+      document.body.innerHTML = '<iframe id="video" src="//www.youtube.com/embed/' + ytUrl + '?autoplay=1" frameborder="0" allowfullscreen></iframe>' + document.body.innerHTML;
+      $(function(){$('#video').css({ width: $(window).innerWidth() + "px", height: $(window).innerHeight() + "px" });$(window).resize(function(){$('#video').css({ width: $(window).innerWidth() + "px", height: $(window).innerHeight() + "px" });});}); // did you know i found this line of code in a stack overflow thing?
+      
+    }
+  const url = new URL(window.location.href);
+  var afterq = url.search.substring(1);
+  add(afterq)
+  console.log(afterq)
+  </script>
+</body>
+</html>
