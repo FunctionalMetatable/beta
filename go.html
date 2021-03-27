@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var urlData = new URL(window.location)
+      var searchParams = new URLSearchParams(urlData.search.substring(1) || "fwd=null")
+      let code = searchParams.get("fwd")
+      function goTo404() {
+        window.location.href = "/go/error/" + code
+      }
+      fetch("https://functionalmetatable.github.io/assets/redir.json")
+      .catch((e) => {
+        goTo404()
+      })
+      .then(e => e.json())
+      .then((data) => {
+        if (data[code]) {
+          window.location.href = data[code]
+        }
+      })
+    </script>
+  </head>
+</html>
