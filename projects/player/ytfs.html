@@ -31,7 +31,8 @@
       const url = new URL(window.location.href);
       var afterq = url.search.substring(1);
       var URLSP = new URLSearchParams(afterq);
-
+      
+      
       if (URLSP.get("v")) {
         load(URLSP.get("v"));
       } else {
