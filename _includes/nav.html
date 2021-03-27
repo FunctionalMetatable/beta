@@ -76,7 +76,7 @@
             var json = await pull.json();
             node.innerText = json.status || "";
             node.style = "color:" + json.color;
-            setTimeout(updateOcular, 10000);
+            setTimeout(updateOcular, 100000);
           }
           updateOcular();
         </script>
