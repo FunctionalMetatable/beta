@@ -29,7 +29,7 @@ export default class meta {
   }
   error() {
     this.window.location.replace(
-      "https://functionalmetatable.github.io/error?utm source=" +
+      "https://functionalmetatable.github.io/error?source=" +
         this.window.location.href
     );
   }
