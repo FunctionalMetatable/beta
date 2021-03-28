@@ -9,3 +9,7 @@ repository: https://github.com/FunctionalMetatable/beta
 logoUrl: https://cdn2.scratch.mit.edu/get_image/user/71379194_500x500.png
 
 markdown: kramdown
+
+gems:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
