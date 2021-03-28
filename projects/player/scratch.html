@@ -10,8 +10,8 @@
   </head>
   <body style="overflow: hidden; margin: 0">
     <script type="text/javascript">
-      import meta from "/assets/meta.js"
-      const main = new meta(document, window)
+      import meta from "/assets/meta.js";
+      const main = new meta(document, window);
       // Syntax:
       // ?mod=<scratch mod>&id=<project id>
       // Types of mod: tw = turbowarp, s = scratch, fp = forkphorus, ep = epicques
@@ -29,7 +29,7 @@
         } else if (mod == "ep") {
           ifr.src = `https://sheeptester.github.io/scratch-gui#${projectId}`;
         } else {
-          main.error()
+          main.error();
         }
 
         document.body.appendChild(ifr);
