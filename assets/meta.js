@@ -1,4 +1,4 @@
-export default class meta() {
+export default class meta {
   constructor(document, window) {
     this.document = document;
     this.window = window
