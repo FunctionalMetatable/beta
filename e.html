@@ -32,10 +32,11 @@ title: 3 letter usernames search
       k.invalid +
       " invalid ones.";
     if (v == c.innerHTML) {
-      console.log("got update > no need change")
+      console.log("got update > no need change");
     } else {
-      c.innerHTML = "We also have " + (k.usernames + "").replaceAll(",", ",<br>");
-      v = c.innerHTML
+      c.innerHTML =
+        "We also have " + (k.usernames + "").replaceAll(",", ",<br>");
+      v = c.innerHTML;
     }
 
     setTimeout(g, 1);
