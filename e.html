@@ -10,7 +10,7 @@ title: 3 letter usernames search: status
   async function g() {
     k = await fetch("https://e-1.9gr.repl.co/");
     k = await k.json();
-    e.innerHTML = k;
+    e.innerHTML = JSON.stringify(k);
     setTimeout(g, 100);
   }
   g();
