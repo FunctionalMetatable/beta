@@ -3,51 +3,49 @@
   <head>
     <title>Redirect</title>
     <script>
-            var Base64 = (function () {
+      var Base64 = (function () {
+        var ALPHA =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
-          var ALPHA = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+        var Base64 = function () {};
 
-          var Base64 = function () {};
+        var _encode = function (value) {
+          if (typeof value !== "number") {
+            throw "Value is not number!";
+          }
 
-          var _encode = function (value) {
+          var result = "",
+            mod;
+          do {
+            mod = value % 64;
+            result = ALPHA.charAt(mod) + result;
+            value = Math.floor(value / 64);
+          } while (value > 0);
 
-              if (typeof(value) !== 'number') {
-                  throw 'Value is not number!';
-              }
+          return result;
+        };
 
-              var result = '', mod;
-              do {
-                  mod = value % 64;
-                  result = ALPHA.charAt(mod) + result;
-                  value = Math.floor(value / 64);
-              } while(value > 0);
+        var _decode = function (value) {
+          var result = 0;
+          for (var i = 0, len = value.length; i < len; i++) {
+            result *= 64;
+            result += ALPHA.indexOf(value[i]);
+          }
 
-              return result;
-          };
+          return result;
+        };
 
-          var _decode = function (value) {
+        Base64.prototype = {
+          constructor: Base64,
+          encode: _encode,
+          decode: _decode,
+        };
 
-              var result = 0;
-              for (var i = 0, len = value.length; i < len; i++) {
-                  result *= 64;
-                  result += ALPHA.indexOf(value[i]);
-              }
-
-              return result;
-          };
-
-          Base64.prototype = {
-              constructor: Base64,
-              encode: _encode,
-              decode: _decode
-          };
-
-          return Base64;
-
+        return Base64;
       })();
-            const myURL = new URL(window.location.href)
-            const search = new URLSearchParams(myURL.search.substring(1) || "v=1");
-            window.location.replace((new Base64()).decode(search.get(v)))
+      const myURL = new URL(window.location.href);
+      const search = new URLSearchParams(myURL.search.substring(1) || "v=1");
+      window.location.replace(new Base64().decode(search.get(v)));
     </script>
   </head>
 </html>
