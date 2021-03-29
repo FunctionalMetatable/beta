@@ -11,7 +11,7 @@
       function goTo404() {
         window.location.href = "error?fwd=" + code;
       }
-      fetch("https://functionalmetatable.github.io/assets/redir.json")
+      fetch("https://raw.githubusercontent.com/FunctionalMetatable/FunctionalMetatable.github.io/main/assets/redir.json")
         .catch((e) => {
           goTo404();
         })
