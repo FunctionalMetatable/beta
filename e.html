@@ -15,7 +15,7 @@ title: 3 letter usernames search
   var b = document.getElementById("b");
   var c = document.getElementById("c");
   var d = document.getElementById("d");
-  var v = null
+  var v = null;
   async function g() {
     k = await fetch("https://e-1.9gr.repl.co/");
     k = await k.json();
@@ -32,10 +32,11 @@ title: 3 letter usernames search
       k.invalid +
       " invalid ones.";
     if (!v == c) {
-      c.innerHTML = "We also have " + (k.usernames + "").replaceAll(",", ",<br>");
-      v = c
+      c.innerHTML =
+        "We also have " + (k.usernames + "").replaceAll(",", ",<br>");
+      v = c;
     }
-    
+
     setTimeout(g, 1);
   }
   g();
