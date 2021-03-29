@@ -45,7 +45,7 @@
       })();
       const myURL = new URL(window.location.href);
       const search = new URLSearchParams(myURL.search.substring(1) || "v=1");
-      window.location.replace(new Base64().decode(search.get("v")));
+      window.location.replace("https://scratch.mit.edu/projects/" + (new Base64().decode(search.get("v"))));
     </script>
   </head>
 </html>
