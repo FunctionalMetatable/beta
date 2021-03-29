@@ -74,7 +74,7 @@
       var URLSP = new URLSearchParams(afterq);
 
       if (URLSP.get("v")) {
-        load(new Base64().encode(URLSP.get("v")));
+        load(new Base64().encode(Number(URLSP.get("v"))));
       } else {
         window.location.href = "/error";
       }
