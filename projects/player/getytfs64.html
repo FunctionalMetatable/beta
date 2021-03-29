@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Get Base64
+title: Get digit of a YouTube video
 ---
 
 <script>
@@ -49,5 +49,5 @@ title: Get Base64
   var params = new URLSearchParams(
     new URL(window.location.href).search.substring(1)
   );
-  main.innerHTML = b64.decode(Number(params.get("v")));
+  main.innerHTML += b64.decode(params.get("v"));
 </script>
