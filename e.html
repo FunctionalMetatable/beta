@@ -31,10 +31,11 @@ title: 3 letter usernames search
       " valid three-letter usernames and " +
       k.invalid +
       " invalid ones.";
-    if !(v == c) {
-      c.innerHTML =
-        "We also have " + (k.usernames + "").replaceAll(",", ",<br>");
-      v = c;
+    if (v == c.innerHTML) {
+      console.log("got update > no need change")
+    } else {
+      c.innerHTML = "We also have " + (k.usernames + "").replaceAll(",", ",<br>");
+      v = c.innerHTML
     }
 
     setTimeout(g, 1);
