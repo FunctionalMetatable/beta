@@ -1,0 +1,16 @@
+---
+layout: default
+title: 3 letter usernames search: status
+---
+<a id="e"></a>
+<script>
+  var e = document.getElementById("e");
+  
+  async function g() {
+    k = await fetch("https://e-1.9gr.repl.co/");
+    k = await k.json();
+    e.innerHTML = k
+    setTimeout(g, 100)
+  }
+  g()
+</script>
