@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 3 letter usernames search
+title: 3 letter usernames - status
 ---
 
 <a id="a"></a>
@@ -35,7 +35,7 @@ title: 3 letter usernames search
       console.log("got update > no need change");
     } else {
       c.innerHTML =
-        "We also have " + (k.usernames + "").replaceAll(",", ",<br>");
+        "The usernames we have registered as \"NOT REGISTERED AS USER\" are: <br>" + (k.usernames + "").replaceAll(",", ",<br>");
       v = c.innerHTML;
     }
 
