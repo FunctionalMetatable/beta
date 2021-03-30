@@ -24,7 +24,7 @@ title: Generate a three letter username, for scratch.
                 origin: "scratch.mit.edu",
               },
             }
-          );
+          ) .catch(err=> {console.log(err);throw err})
           var dat = await fet.json();
 
           if (dat.code == "NotFound") {
