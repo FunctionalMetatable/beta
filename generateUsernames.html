@@ -29,7 +29,7 @@ title: Generate a three letter username, for scratch.
             throw err;
           });
           var dat = await fet.json();
-          console.log(dat)
+          console.log(dat);
           if (dat.code == "NotFound") {
             document.getElementById("USER").innerHTML += "<br>" + iter;
           }
