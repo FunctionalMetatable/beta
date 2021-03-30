@@ -37,12 +37,12 @@ title: AllProjects - StudioTools
     } projects. <br> <h2>Description</h2><br>${dat.description}`;
     for (let i = 0; i < dat2.length; i++) {
       var toAdd = `
-<li class="project thumb item" data-id="508480069">
+<li class="project thumb item" data-id="${dat2[i].id}">
   <a href="https://scratch.mit.edu/projects/${dat2[i].id}/">
-    <img class="lazy image" data-original="//cdn2.scratch.mit.edu/get_image/project/${dat2[i].id}_144x108.png" width="144" height="108" src="//cdn2.scratch.mit.edu/get_image/project/${dat2[i].id}_144x108.png" style="display: block;">
+    <img loading="lazy" data-original="//cdn2.scratch.mit.edu/get_image/project/${dat2[i].id}_144x108.png" width="480" height="180" src="//cdn2.scratch.mit.edu/get_image/project/${dat2[i].id}_480x180.png" style="display: block;">
   </a>
   <span class="title">
-    <a href="/projects/508480069/">${dat2[i].title}</a>
+    <a href="/projects/${dat2[i].id}/">${dat2[i].title}</a>
   </span>
    
      </li>`;
