@@ -1,0 +1,25 @@
+---
+layout: default
+title: Generate a three letter username, for scratch.
+---
+<h1>Three letter username Generator</h1>
+<a id="USER"></a>
+
+<script>
+  fetch("https://functionalmetatable.github.io/three-letter-scratch-usernames.json")
+  .then(res => res.json())
+  .then((res) => {
+    async function e() {
+      for (let i=0;i<res.length;i++) {
+        var iter = res[i];
+        
+        var fet = await fetch("https://cors.9gr.repl.co/api.scratch.mit.edu/users/" + iter);
+        var dat = await fet.json();
+        
+        if (dat.code == "NotFound") {
+          document.getElementById("USER").innerHTML += "<br>" + iter
+        }
+      }
+    }
+  })
+</script>
