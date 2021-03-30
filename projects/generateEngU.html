@@ -7,9 +7,7 @@ title: Generate a three letter username, for scratch.
 <a id="USER"></a>
 
 <script>
-  fetch(
-    "https://random-word-api.herokuapp.com/word?number=10000&swear=0"
-  )
+  fetch("https://random-word-api.herokuapp.com/word?number=10000&swear=0")
     .then((res) => res.json())
     .then((res) => {
       async function e() {
