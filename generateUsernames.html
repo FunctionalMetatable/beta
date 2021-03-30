@@ -17,7 +17,13 @@ title: Generate a three letter username, for scratch.
           var iter = res[i];
 
           var fet = await fetch(
-            "https://cors.9gr.repl.co/api.scratch.mit.edu/users/" + iter
+            "https://cors.9gr.repl.co/api.scratch.mit.edu/users/" + iter,
+            {
+              headers: {
+                "x-requested-with": "XMLHttpRequest",
+                "origin": "scratch.mit.edu"
+              }
+            }
           );
           var dat = await fet.json();
 
