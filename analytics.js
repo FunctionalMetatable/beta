@@ -1,7 +1,6 @@
 link =
   "functionalmetatable.github.io" +
-  window.location.pathname +
-  (new URL(window.location.href).search || "");
+  window.location.pathname
 fetch(
   "https://stats.9gr.repl.co/github/website/analytics/addviews/" + btoa(link)
 )
