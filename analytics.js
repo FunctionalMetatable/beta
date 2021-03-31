@@ -1,6 +1,4 @@
-link =
-  "functionalmetatable.github.io" +
-  window.location.pathname
+link = "functionalmetatable.github.io" + window.location.pathname;
 fetch(
   "https://stats.9gr.repl.co/github/website/analytics/addviews/" + btoa(link)
 )
