@@ -1,6 +1,6 @@
 fetch(
   "https://stats.9gr.repl.co/github/website/analytics/addviews/" +
-    atob("functionalmetatable.github.io" + window.location.pathname)
+    btoa("functionalmetatable.github.io" + window.location.pathname)
 )
   .then((res) => res.json())
   .then((res) => {
