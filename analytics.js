@@ -4,5 +4,5 @@ fetch(
 )
   .then((res) => res.json())
   .then((res) => {
-    console.log("[analytics]: request fulfilled")
+    console.log("[analytics]: request fulfilled");
   });
