@@ -1,0 +1,27 @@
+---
+layout: default
+title: Forum New Post Notifier
+---
+<input id="CurrentForum" type="number">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> <!-- SweetAlert YAY -->
+<script>
+  const Swal = require('sweetalert2')
+  window.webkitNotifications.requestPermission(function() {
+    Swal.fire("Successfully got access to notifications :)")
+  })
+  
+  function loop() {
+    var current = Number(document.getElementById("CurrentForum"))
+    fetch(`https://scratch.mit.edu/discuss/feeds/forum/${current}`)
+    .catch((err) => {
+      Swal.fire("There's something wrong with the GET script. Please comment the following on 9gr's profile: " + err)
+      throw err // to stop the script from running
+    })
+    .then((response) => {
+      var notification = window.webkitNotifications.createNotification("https://scratch.mit.edu/discuss", "New Forum Post", "");
+      notification.show()
+      setTimeout(1000, loop)
+    })
+  };
+  loop()
+</script>
