@@ -7,11 +7,30 @@ title: Forum New Post Notifier
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- SweetAlert YAY -->
 <script>
-  window.webkitNotifications.requestPermission(function () {
-    Swal.fire("Successfully got access to notifications :)");
-    loop();
-  });
-
+  if (!("Notification" in window)) {
+    Swal.fire({
+      title: "Error",
+      text: "It looks like your browser doesn't support notifications :(",
+      icon: 'error',
+      confirmButtonText: "RIP"
+    })
+  } else if (Notification.permission === "granted") {
+    Swal.fire({
+      title: "Success",
+      text: "We have successfully got permissions to send notifications! :D",
+      icon: 'success',
+      confirmButtonText: "Let's go!"
+    })
+    loop()
+  } else {
+    Swal.fire({
+      title: "Error",
+      text: "It looks like we can't send notifications to you. Try enabling notifications.",
+      icon: 'error',
+      confirmButtonText: 'Ok'
+    })
+  }
+  
   function loop() {
     var current = Number(document.getElementById("CurrentForum"));
     fetch(`https://scratch.mit.edu/discuss/feeds/forum/${current}`)
@@ -23,12 +42,9 @@ title: Forum New Post Notifier
         throw err; // to stop the script from running
       })
       .then((response) => {
-        var notification = window.webkitNotifications.createNotification(
-          "https://scratch.mit.edu/discuss",
-          "New Forum Post",
-          ""
-        );
-        notification.show();
+        var dom = new DOMParser()
+        dom.parseFromString(response.text(), "application/xml")
+        Notification
         setTimeout(1000, loop);
       });
   }
