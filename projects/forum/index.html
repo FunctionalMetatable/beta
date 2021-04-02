@@ -7,7 +7,6 @@ title: Forum New Post Notifier
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- SweetAlert YAY -->
 <script>
-  const Swal = require("sweetalert2");
   window.webkitNotifications.requestPermission(function () {
     Swal.fire("Successfully got access to notifications :)");
     loop();
