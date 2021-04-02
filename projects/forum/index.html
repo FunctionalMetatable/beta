@@ -10,9 +10,9 @@ title: Forum New Post Notifier
   const Swal = require("sweetalert2");
   window.webkitNotifications.requestPermission(function () {
     Swal.fire("Successfully got access to notifications :)");
-    loop()
+    loop();
   });
-  
+
   function loop() {
     var current = Number(document.getElementById("CurrentForum"));
     fetch(`https://scratch.mit.edu/discuss/feeds/forum/${current}`)
@@ -33,5 +33,4 @@ title: Forum New Post Notifier
         setTimeout(1000, loop);
       });
   }
-  
 </script>
