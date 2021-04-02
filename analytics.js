@@ -4,7 +4,5 @@ fetch(
 )
   .then((res) => res.json())
   .then((res) => {
-    console.log(
-      "[analytics]: added views, from server got " + JSON.stringify(res)
-    );
+    console.log("[analytics]: request fulfilled")
   });
