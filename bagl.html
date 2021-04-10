@@ -2,145 +2,194 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Bugs and Glitches BBCode Generator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <style>
-      div[class='card-panel teal lighten-2'] * {
-  color: white
-}
+      div[class="card-panel teal lighten-2"] * {
+        color: white;
+      }
     </style>
   </head>
   <body>
-    
     <div class="container">
       <div class="card-panel teal lighten-2">
         <h3>Bugs and Glitches BBCode Generator</h3>
         <p>for the 5th Bugs and Glitches Directory</p>
       </div>
-      <br>
+      <br />
       <div class="card-panel white lighten-2">
-        
         <h5>1. Topic Info</h5>
-        <br>
+        <br />
         <div class="col">
           <div class="input-field col s6">
-            <input value="123" id="topic-id" type="number" class="validate">
+            <input value="123" id="topic-id" type="number" class="validate" />
             <label class="active" for="topic-id">Topic ID</label>
           </div>
-          <br>
-          <br>
-          <br>
+          <br />
+          <br />
+          <br />
           <div class="input-field col s6">
-            <input value="Scratch.INIT_DATA doesn't show on gdpr'd accounts" id="topic-title" type="text" class="validate">
+            <input
+              value="Scratch.INIT_DATA doesn't show on gdpr'd accounts"
+              id="topic-title"
+              type="text"
+              class="validate"
+            />
             <label class="active" for="topic-title">Topic Title</label>
           </div>
-          <br>
-          <br>
+          <br />
+          <br />
           <div class="input-field col s6">
-            <input value="-InsanityGames-" type="text" class="validate" id="author">
+            <input
+              value="-InsanityGames-"
+              type="text"
+              class="validate"
+              id="author"
+            />
             <label class="active" for="author">Topic Author</label>
           </div>
-          <br>
-          <br>
+          <br />
+          <br />
           <h6>Select <b>one</b> of the following:</h6>
           <div class="input-field col s6">
             <p>
               <label>
-                <input class="with-gap" name="current-outcome" type="radio" value="Deleted">
+                <input
+                  class="with-gap"
+                  name="current-outcome"
+                  type="radio"
+                  value="Deleted"
+                />
                 <span>Deleted</span>
               </label>
             </p>
             <p>
               <label>
-                <input class="with-gap" name="current-outcome" type="radio" value="Closed">
+                <input
+                  class="with-gap"
+                  name="current-outcome"
+                  type="radio"
+                  value="Closed"
+                />
                 <span>Closed</span>
               </label>
             </p>
             <p>
               <label>
-                <input class="with-gap" name="current-outcome" type="radio" value="Fixed">
+                <input
+                  class="with-gap"
+                  name="current-outcome"
+                  type="radio"
+                  value="Fixed"
+                />
                 <span>Fixed</span>
               </label>
             </p>
             <p>
               <label>
-                <input class="with-gap" name="current-outcome" type="radio" value="Ongoing" checked="true">
+                <input
+                  class="with-gap"
+                  name="current-outcome"
+                  type="radio"
+                  value="Ongoing"
+                  checked="true"
+                />
                 <span>Ongoing</span>
               </label>
             </p>
           </div>
-          <br>
+          <br />
           <h6>Is this bug common?</h6>
           <div class="switch">
             <label>
               no
-              <input type="checkbox" id="common-bug">
+              <input type="checkbox" id="common-bug" />
               <span class="lever"></span>
               yes
             </label>
           </div>
-          <br>
-          <br>
+          <br />
+          <br />
 
           <div class="input-field col s6">
-            <input value="" type="text" class="validate" id="gh-link">
-            <label class="active" for="author">GitHub link (leave empty if none)</label>
+            <input value="" type="text" class="validate" id="gh-link" />
+            <label class="active" for="author"
+              >GitHub link (leave empty if none)</label
+            >
           </div>
         </div>
-        
       </div>
-      <br>
-      <br>
+      <br />
+      <br />
 
       <div class="card-panel white lighten-2">
-        <a class="waves-effect waves-light btn" onclick="location.reload()" href="#">Reset</a>
-        <a class="waves-effect waves-light btn" onclick="generate()" href="#">Generate</a>
+        <a
+          class="waves-effect waves-light btn"
+          onclick="location.reload()"
+          href="#"
+          >Reset</a
+        >
+        <a class="waves-effect waves-light btn" onclick="generate()" href="#"
+          >Generate</a
+        >
         <div class="card-panel white lighten-2" style="">
           <a>
-            <textarea id="generated-bbcode">            </textarea>
+            <textarea id="generated-bbcode"> </textarea>
           </a>
-          <br>
-          <br>
-          <a class="waves-effect waves-light btn" onclick="copy()" href="#generated-bbcode">Copy</a>
+          <br />
+          <br />
+          <a
+            class="waves-effect waves-light btn"
+            onclick="copy()"
+            href="#generated-bbcode"
+            >Copy</a
+          >
         </div>
       </div>
     </div>
-    <script>var textareacopy = document.getElementById("generated-bbcode")
-function copy() {
-  textareacopy.select();
-  textareacopy.setSelectionRange(0, 99999);
-  document.execCommand("copy")
-}
+    <script>
+      var textareacopy = document.getElementById("generated-bbcode");
+      function copy() {
+        textareacopy.select();
+        textareacopy.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+      }
 
-function generate() {
-  var topicID = document.getElementById("topic-id").value
-  var topicTitle = document.getElementById("topic-title").value
-  var author = document.getElementById("author").value
-  var _status = document.getElementsByName("current-outcome")
-  var status
-  for (let i in _status) {
-    if (_status[i].checked) {
-      status = _status[i].value
-    }
-  }
-  var common = document.getElementById("common-bug").value
-  var gh_link = document.getElementById("gh-link").value
+      function generate() {
+        var topicID = document.getElementById("topic-id").value;
+        var topicTitle = document.getElementById("topic-title").value;
+        var author = document.getElementById("author").value;
+        var _status = document.getElementsByName("current-outcome");
+        var status;
+        for (let i in _status) {
+          if (_status[i].checked) {
+            status = _status[i].value;
+          }
+        }
+        var common = document.getElementById("common-bug").value;
+        var gh_link = document.getElementById("gh-link").value;
 
-  var tags = "nothing yet.."
+        var tags = "nothing yet..";
 
-  if (status == "Fixed") tags = "[color=#34a853]â¬¤[/color]"
-  if (status == "Closed") tags = "[color=#fbbc05]â¬¤[/color]"
-  if (status == "Deleted") tags = "[color=#eb4335]â¬¤[/color]"
-  textareacopy.value = `[url=https://scratch.mit.edu/discuss/topic/${topicID}][big]${topicTitle}[/big][/url]\n
-BY [url=https://scratch.mit.edu/users/${author}]${author}[/url]  /  TAGS: ${tags}  `
-  if (gh_link !== "") {
-     textareacopy.value += ` /  [url=${gh_link}]GITHUB ISSUE[/url]`
-  }
-  textareacopy.value += `  /  DESCRIPTION: N/A`
-  var _e=Array.prototype.slice.call(document.querySelectorAll("div[class='card-panel white lighten-2']"))
-  _e[_e.length-1].style = ""
-}</script>
-  
-</body></html>
+        if (status == "Fixed") tags = "[color=#34a853]â¬¤[/color]";
+        if (status == "Closed") tags = "[color=#fbbc05]â¬¤[/color]";
+        if (status == "Deleted") tags = "[color=#eb4335]â¬¤[/color]";
+        textareacopy.value = `[url=https://scratch.mit.edu/discuss/topic/${topicID}][big]${topicTitle}[/big][/url]\n
+BY [url=https://scratch.mit.edu/users/${author}]${author}[/url]  /  TAGS: ${tags}  `;
+        if (gh_link !== "") {
+          textareacopy.value += ` /  [url=${gh_link}]GITHUB ISSUE[/url]`;
+        }
+        textareacopy.value += `  /  DESCRIPTION: N/A`;
+        var _e = Array.prototype.slice.call(
+          document.querySelectorAll("div[class='card-panel white lighten-2']")
+        );
+        _e[_e.length - 1].style = "";
+      }
+    </script>
+  </body>
+</html>
