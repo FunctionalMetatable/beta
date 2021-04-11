@@ -10,7 +10,7 @@ logoUrl: https://cdn2.scratch.mit.edu/get_image/user/71379194_500x500.png
 
 markdown: kramdown
 
-plugin:
+plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-minifier
