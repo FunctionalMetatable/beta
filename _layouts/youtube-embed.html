@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>YouTube Player</title>
-    <meta name="og:title" content="YouTube Player">
-    <meta name="description" content="YouTube Embed Player thing">
+    <meta name="og:title" content="YouTube Player" />
+    <meta name="description" content="YouTube Embed Player thing" />
   </head>
-  <body style="margin:0; overflow: hidden;">
+  <body style="margin: 0; overflow: hidden">
     <script>
       let iframe = document.createElement("iframe");
-      iframe.src = `https://youtube.com/embed/${"{{ page.id }}" || "dQw4w9WgXcQ"}?autoplay=1`;
+      iframe.src = `https://youtube.com/embed/${
+        "{{ page.id }}" || "dQw4w9WgXcQ"
+      }?autoplay=1`;
       iframe.width = window.innerWidth + "px";
       iframe.height = window.innerHeight + "px";
       iframe.style = "border: 0;";
       iframe.frameborder = "0";
-      iframe.title = "YouTube Video"
-      iframe.setAttribute("allowfullscreen", true)
-      
-      document.body.appendChild(iframe)
-      
+      iframe.title = "YouTube Video";
+      iframe.setAttribute("allowfullscreen", true);
+
+      document.body.appendChild(iframe);
+
       window.onresize = () => {
         iframe.width = window.innerWidth + "px";
         iframe.height = window.innerHeight + "px";
-      }
+      };
     </script>
   </body>
 </html>
