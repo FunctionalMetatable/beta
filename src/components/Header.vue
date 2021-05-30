@@ -4,7 +4,7 @@
       <div class="logo">
         <center>
           <a href="/" target="_top"
-            ><img src="{{ site.logoUrl }}" width="50px" height="50px"
+            ><img src="https://cdn2.scratch.mit.edu/get_image/user/71379194_100x100.png" width="50px" height="50px"
           /></a>
         </center>
       </div>
