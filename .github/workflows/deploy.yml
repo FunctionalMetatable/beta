@@ -1,0 +1,32 @@
+name: Deploy Site
+on: [push]
+
+jobs:
+   deploy:
+       name: Deploy to GitHub Pages
+
+
+     - name: Checkout
+       uses: actions/checkout@v3
+
+    
+     - name: Setup Node.js
+       uses: actions/setup-node@v2.1.2
+       with:
+         node_version: 14.x
+      
+     - name: Install Dependencies
+       run: |
+           cd src
+           yarn install
+
+     - name: Generate Site
+       run: yarn run generate
+
+     - name: Deploy to GitHub Pages
+       uses: peaceiris/actions-gh-pages@v3
+       with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+       
+       run: echo Finished Build
