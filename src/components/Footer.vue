@@ -1,0 +1,27 @@
+<template>
+<hr />
+<br />
+<center>
+  <p>
+    yeet
+    <br />
+
+    <a style="font-family: 'Comic Sans MS'">
+      Copyright FunctionalMetatable 2020.
+    </a>
+    <br />
+    <p>
+      <a href="//mz.vercel.app">Redirectz</a> (unmaintained) |
+      <a href="//scratchsuite.github.io">ScratchSuite</a> |
+      <a href="//scratch.mit.edu/users/9gr">My Scratch Profile</a>
+    </p>
+    <img
+      src="https://assets.scratch.mit.edu/1fbb58d59459225af038033c6c124910.png"
+      style="float: right; width: 200px; height: 150px"
+    />
+  </p>
+</center>
+</template>
+<script>
+  export default {}
+</script>

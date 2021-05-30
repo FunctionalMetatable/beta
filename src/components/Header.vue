@@ -1,0 +1,114 @@
+<template>
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="logo">
+        <center>
+          <a href="/" target="_top"
+            ><img src="{{ site.logoUrl }}" width="50px" height="50px"
+          /></a>
+        </center>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="align-left">
+        <div class="bg">
+          <a href="/projects" target="_top">Projects</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="align-left">
+        <div class="bg">
+          <a href="/lol" target="_top">Memes</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="align-left">
+        <div class="bg">
+          <a href="/blog">Blog</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="align-right">
+        <a
+          id="ocular"
+          title="This is an ocular status. You can set yours at my-ocular.jeffalo.net."
+        >
+        </a>
+        <script>
+          var node = document.getElementById("ocular");
+          async function updateOcular() {
+            var pull = await fetch(
+              "https://my-ocular.jeffalo.net/api/user/9gr"
+            );
+            var json = await pull.json();
+            node.innerText = json.status || "";
+            node.style = "color:" + json.color;
+            setTimeout(updateOcular, 100000);
+          }
+          updateOcular();
+        </script>
+      </div>
+    </li>
+  </ul>
+</template>
+
+<script>
+  export default {}
+</script>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+  nav {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #151618;
+  }
+  nav li .align-left a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    text-size: 55px;
+    padding: 22px 16px;
+    float: left;
+    background-color: #151618;
+  }
+  nav li .align-right a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    text-size: 55px;
+    padding: 22px 16px;
+    float: right;
+    background-color: #151618;
+  }
+  nav li .bg a:hover {
+    background-color: #0000ff;
+  }
+  nav li .logo a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    text-size: 55px;
+    padding: 0px 0px;
+    float: left;
+    background-color: #151618;
+  }
+</style>
