@@ -1,6 +1,8 @@
 <template>
   <Header />
-  <h1>nuxt nuxt nuxt nuxt nuxt</h1>
+  <h1>Welcome to my site!</h1>
+  <img src="https://github-readme-stats.vercel.app/api?username=FunctionalMetatable&theme=radical" />
+  <img src="https://stats.9gr.repl.co/github/website/functionalmetatable/views.svg" />
   <Footer />
 </template>
 

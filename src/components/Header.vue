@@ -3,30 +3,30 @@
     <li class="nav-item">
       <div class="logo">
         <center>
-          <a href="/" target="_top"
+          <NuxtLink to="/" target="_top"
             ><img src="https://cdn2.scratch.mit.edu/get_image/user/71379194_100x100.png" width="50px" height="50px"
-          /></a>
+          /></NuxtLink>
         </center>
       </div>
     </li>
     <li class="nav-item">
       <div class="align-left">
         <div class="bg">
-          <a href="/projects" target="_top">Projects</a>
+          <NuxtLink to="/projects" target="_top">Projects</NuxtLink>
         </div>
       </div>
     </li>
     <li class="nav-item">
       <div class="align-left">
         <div class="bg">
-          <a href="/lol" target="_top">Memes</a>
+          <NuxtLink to="/lol" target="_top">Memes</NuxtLink>
         </div>
       </div>
     </li>
     <li class="nav-item">
       <div class="align-left">
         <div class="bg">
-          <a href="/blog">Blog</a>
+          <NuxtLink to="/blog">Blog</NuxtLink>
         </div>
       </div>
     </li>

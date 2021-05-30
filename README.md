@@ -1,8 +1,10 @@
-# site
+# My GitHub Site
 
 ## Build Setup
 
 ```bash
+cd src
+
 # install dependencies
 $ yarn install
 
@@ -16,5 +18,5 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
+e
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
