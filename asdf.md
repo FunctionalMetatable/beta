@@ -1,4 +1,4 @@
 ---
 layout: redirect
-url: https://scratch.mit.edu
+redirect: https://scratch.mit.edu
 ---
