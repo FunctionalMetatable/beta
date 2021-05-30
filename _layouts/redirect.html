@@ -2,10 +2,10 @@
 <html>
   <head>
     <title>Redirecting you to {{ page.redirect }}...</title>
-    <meta http-equiv="refresh" content="0; url=https://{{ page.redirect }}" />
+    <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
 
     <script>
-      window.location.href = "//{{ page.redirect }}";
+      window.location.href = "{{ page.redirect }}";
     </script>
   </head>
 </html>
